@@ -1,0 +1,56 @@
+/* https://loading.io/css/ */
+.lds-dual-ring {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+}
+.lds-dual-ring:after {
+	content: ' ';
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 10px solid var(--color-accent-blue);
+	border-color: var(--color-accent-blue) transparent var(--color-accent-blue) transparent;
+	animation: lds-dual-ring 1.2s linear infinite, spinnerFadeIn 1s, spinnerFadeOut 1s linear var(--loading-time);
+}
+
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinnerFadeIn {
+	0% {
+		border-color: transparent;
+		height: 0px;
+		width: 0px;
+	}
+
+	100% {
+		height: 100px;
+		width: 100px;
+		border-color: var(--color-accent-blue) transparent var(--color-accent-blue) transparent;
+	}
+}
+
+@keyframes spinnerFadeOut {
+	0% {
+		height: 100px;
+		width: 100px;
+		border-color: var(--color-accent-blue) transparent var(--color-accent-blue) transparent;
+	}
+
+	100% {
+		border-color: transparent;
+		height: 0px;
+		width: 0px;
+	}
+}

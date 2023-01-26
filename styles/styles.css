@@ -1,0 +1,360 @@
+:root {
+	/* Colors */
+	--color-main-red: hsl(0, 100%, 74%);
+	--color-main-green: hsl(154, 59%, 51%);
+	--color-main-green--hover: hsl(154, 55%, 62%);
+	--color-accent-blue: hsl(248, 32%, 49%);
+	--color-neutral-dark-blue: hsl(249, 10%, 26%);
+	--color-neutral-grayish-blue: hsl(246, 25%, 77%);
+	--color-font-white: #fff;
+
+	/* Border Radius */
+	--base-border-radius: 0.5rem;
+	--base-input-bottom-margin: 1rem;
+
+	/* Box shadow  */
+	--base-box-shadow: 0px 3px 0px 0px hsla(249, 10%, 26%, 0.2);
+
+	/* Timing */
+	--loading-time: 1ms;
+}
+
+body {
+	/* Display and Visibility */
+	display: grid;
+	place-items: center;
+
+	/* Box Model (from outside in) */
+	margin: 0 1.5rem;
+
+	/* Background */
+	background-color: var(--color-main-red);
+	background-image: url('../images/bg-intro-mobile.png');
+}
+
+/* ############### */
+/* Intro component */
+/* ############### */
+
+.intro {
+	/* Box Model (from outside in) */
+	max-width: 21rem;
+
+	/* Typography */
+	font-family: 'Poppins', sans-serif;
+}
+
+/* ################## */
+/* Header compontent  */
+/* ################## */
+
+.header {
+	/* Typography */
+	text-align: center;
+	color: var(--color-font-white);
+}
+
+.header__primary-heading {
+	/* Typography */
+	font-weight: 700;
+}
+
+.header__secondary-heading {
+	/* Box Model (from outside in) */
+	margin-bottom: 3rem;
+
+	/* Typography */
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+/* ################ */
+/* Main compontent  */
+/* ################ */
+
+.main {
+	/* Display and Visibility */
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.main__prompt {
+	/* Box Model (from outside in) */
+	padding: 1rem 3rem;
+	border-radius: var(--base-border-radius);
+	box-shadow: var(--base-box-shadow);
+
+	/* Background */
+	background-color: var(--color-accent-blue);
+
+	/* Typography */
+	text-align: center;
+	color: var(--color-font-white);
+}
+
+.main__prompt--bold {
+	/* Typography */
+	font-weight: 600;
+}
+
+/* ################ */
+/* Form compontent  */
+/* ################ */
+
+.form {
+	/* Position and Layout */
+	position: relative;
+
+	/* Display and Visibility */
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	/* Background */
+	background-color: var(--color-font-white);
+
+	/* Box Model (from outside in) */
+	padding: 1.5rem;
+	border-radius: var(--base-border-radius);
+	box-shadow: var(--base-box-shadow);
+}
+
+.form__input {
+	/* Box Model (from outside in) */
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border: 2px solid var(--color-neutral-grayish-blue);
+	border-radius: 0.3rem;
+}
+
+.form__input,
+.form__input::placeholder {
+	/* Typography */
+	font-weight: 600;
+	color: var(--color-neutral-dark-blue);
+}
+
+.form__input:focus:not(.form__submit) {
+	/* Box Model (from outside in) */
+	outline: none;
+	border: 2px solid var(--color-accent-blue);
+}
+
+.form__input--invalid {
+	/* Box Model (from outside in) */
+	border-color: var(--color-main-red);
+}
+
+.form__input--invalid,
+.form__input--invalid::placeholder {
+	/* Box Model (from outside in) */
+	color: var(--color-main-red);
+}
+
+/* ############ */
+/* Form errors  */
+/* ############ */
+
+.form__input-container {
+	/* Position and Layout */
+	position: relative;
+}
+
+.form__error-icon {
+	/* Position and Layout */
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+}
+
+.form__error-message {
+	/* Position and Layout */
+	position: absolute;
+	right: 0;
+	bottom: -1.2rem;
+
+	/* Typography */
+	font-size: 0.75rem;
+	font-style: italic;
+	color: var(--color-main-red);
+}
+
+.form__error-icon--is-hidden {
+	display: none;
+}
+
+.form__error-message--is-hidden {
+	display: none;
+}
+
+.form__submit {
+	/* Background */
+	background-color: var(--color-main-green);
+	cursor: pointer;
+
+	/* Animation */
+	transition: all 300ms;
+
+	/* Box Model (from outside in) */
+	border: none;
+	box-shadow: var(--base-box-shadow);
+
+	/* Typography */
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--color-font-white);
+}
+
+.form__submit:hover {
+	/* Background */
+	background-color: var(--color-main-green--hover);
+}
+
+.form__terms-and-services {
+	/* Box Model (from outside in) */
+	padding: 0 1rem;
+
+	/* Typography */
+	font-size: 0.8rem;
+	text-align: center;
+	color: var(--color-neutral-grayish-blue);
+}
+
+.form__terms-and-services--link:link,
+.form__terms-and-services--link:visited {
+	/* Typography */
+	text-decoration: none;
+	color: var(--color-main-red);
+	font-weight: 700;
+}
+
+/* ################## */
+/* Loader compontent  */
+/* ################## */
+
+.loader-backdrop {
+	/* Position and Layout */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/* Animation */
+	animation: modalFadeIn 1s;
+
+	/* Box Model (from outside in) */
+	width: 100%;
+	height: 100%;
+	border-radius: var(--base-border-radius);
+
+	/* Background */
+	background-color: rgb(255, 255, 255, 0.7);
+}
+
+.loader-backdrop--no-opacity {
+	/* Animation */
+	animation: modalFadeIn100 0.5s;
+
+	/* Background */
+	background-color: rgb(255, 255, 255, 1);
+}
+
+@keyframes modalFadeIn {
+	0% {
+		background-color: rgb(255, 255, 255, 0);
+	}
+	100% {
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+}
+
+@keyframes modalFadeIn100 {
+	0% {
+		background-color: rgb(255, 255, 255, 0.7);
+	}
+	100% {
+		background-color: rgb(255, 255, 255, 1);
+	}
+}
+
+.fade-out {
+	/* Position and Layout */
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	/* Animation */
+	animation: fade-out 0.8s ease-in;
+
+	/* Background */
+	background-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes fade-out {
+	0% {
+		background-color: rgb(255, 255, 255);
+	}
+	100% {
+		background-color: rgba(255, 255, 255, 0);
+	}
+}
+
+.success-message-container {
+	/* Position and Layout */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/* Display and Visibility */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	/* Animation */
+	animation: messageContainerAnimation 0.8s ease-in;
+
+	/* Box Model (from outside in) */
+	padding: 3rem 1.5rem;
+	width: 100%;
+	height: 100%;
+
+	/* Typography */
+	color: var(--color-neutral-dark-blue);
+}
+
+.success-message__icon {
+	/* Typography */
+	font-size: 6rem;
+	color: var(--color-main-green);
+}
+
+.success-message__heading {
+	/* Typography */
+	font-weight: 700;
+}
+.success-message__text {
+	/* Typography */
+	text-align: center;
+	font-weight: 500;
+}
+
+@keyframes messageContainerAnimation {
+	0% {
+		transform: translateY(5%);
+	}
+
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+.hidden {
+	/* Display and Visibility */
+	display: none;
+}

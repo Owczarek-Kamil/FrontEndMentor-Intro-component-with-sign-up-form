@@ -1,0 +1,30 @@
+@media (min-width: 64em) {
+	.intro {
+		/* Display and Visibility */
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		column-gap: 3rem;
+
+		/* Box Model (from outside in) */
+		max-width: 64rem;
+	}
+	.header {
+		/* Display and Visibility */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		/* Typography */
+		text-align: left;
+	}
+
+	.header__primary-heading {
+		/* Typography */
+		font-size: 3rem;
+	}
+	.form__terms-and-services {
+		/* Box Model (from outside in) */
+		padding: 0;
+	}
+}
