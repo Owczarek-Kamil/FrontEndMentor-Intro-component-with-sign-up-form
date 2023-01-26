@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 		<title>Frontend Mentor | Intro component with sign up form</title>
+		<script src="https://kit.fontawesome.com/feadedee30.js" crossorigin="anonymous"></script>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -18,6 +19,8 @@
 			rel="stylesheet" />
 		<link rel="stylesheet" href="./styles/reset.css" />
 		<link rel="stylesheet" href="./styles/styles.css" />
+		<link rel="stylesheet" href="./styles/loader.css" />
+		<link rel="stylesheet" href="./styles/media-queries.css" />
 	</head>
 	<body>
 		<div class="intro">
@@ -30,19 +33,85 @@
 			</header>
 			<main class="main">
 				<p class="main__prompt">
-					<span class="main__promp--bold">Try it free 7 days</span>then $20/mo. thereafter
+					<span class="main__prompt--bold">Try it free 7 days</span> then $20/mo. thereafter
 				</p>
 				<form action="#" class="main__form form">
-					<input type="text" name="first-name" id="first-name" placeholder="First Name" />
-					<input type="text" name="last-name" id="last-name" placeholder="Last Name" />
-					<input type="email" name="email" id="email" placeholder="Email Address" />
-					<input type="password" name="password" id="password" placeholder="Password" />
-					<button type="submit" id="submit">Claim your free trial</button>
+					<div class="form__input-container">
+						<input
+							class="form__input"
+							type="text"
+							name="first-name"
+							id="first-name"
+							placeholder="First Name" />
+						<img
+							class="form__error-icon form__error-icon--is-hidden"
+							src="./images/icon-error.svg"
+							alt=""
+							aria-hidden="true" />
+						<p class="form__error-message form__error-message--is-hidden">
+							First Name cannot be empty
+						</p>
+					</div>
+					<div class="form__input-container">
+						<input
+							class="form__input"
+							type="text"
+							name="last-name"
+							id="last-name"
+							placeholder="Last Name" />
+						<img
+							class="form__error-icon form__error-icon--is-hidden"
+							src="./images/icon-error.svg"
+							alt=""
+							aria-hidden="true" />
+						<p class="form__error-message form__error-message--is-hidden">
+							Last name cannot be empty
+						</p>
+					</div>
+					<div class="form__input-container">
+						<input class="form__input" name="email" id="email" placeholder="Email Address" />
+						<img
+							class="form__error-icon form__error-icon--is-hidden"
+							src="./images/icon-error.svg"
+							alt=""
+							aria-hidden="true" />
+						<p class="form__error-message form__error-message--is-hidden">Email cannot be empty</p>
+					</div>
+					<div class="form__input-container">
+						<input
+							class="form__input"
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Password" />
+						<img
+							class="form__error-icon form__error-icon--is-hidden"
+							src="./images/icon-error.svg"
+							alt=""
+							aria-hidden="true" />
+						<p class="form__error-message form__error-message--is-hidden">Password ccanot be empty</p>
+					</div>
+					<button class="form__input form__submit" type="submit" id="submit">
+						Claim your free trial
+					</button>
+					<p class="form__terms-and-services">
+						By clicking the button, you are agreeing to our
+						<a href="#" class="form__terms-and-services--link">Terms and Services</a>
+					</p>
+					<div class="loader-backdrop hidden">
+						<div class="lds-dual-ring hidden"></div>
+						<div class="fade-out hidden"></div>
+						<div class="success-message-container hidden">
+							<i class="fas fa-check-circle success-message__icon"></i>
+							<h2 class="success-message__header">Welcome to the club!</h2>
+							<p class="success-message__text">
+								Please make sure to check your inbox and confirm the subscription.
+							</p>
+						</div>
+					</div>
 				</form>
-				<p class="main__term-and-services">
-					By clicking the button, you are agreeing to our Terms and Services
-				</p>
 			</main>
 		</div>
+		<script src="./index.js"></script>
 	</body>
 </html>
